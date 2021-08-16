@@ -1,0 +1,195 @@
+Shodan is a unique search engine that finds devices that are connected to the internet and gathers information about those related devices using banners and port scanners.
+The most popular searches are for devices like routers, webcam, ADB devices, etc. Shodan can show all the devices which are broadcasting their information on the world wide web. This is especially useful for people pentesting IoT devices as well as critical infrastructures such as power grids and power plants.
+
+Sometimes due to misconfiguration and human error, criticals services are explored on the internet. With Shodan, you can see those critical services openly accessible via the internet.
+As I said before Shodan is a search engine that works by scanning the entire internet and parsing the information on banners that are returned by various devices connected on the internet. By using this information, Shodan can show you a lot of valuable information about the devices on the internet.
+
+For, e.g., it can show detailed information about which ports and services are being used by a specific device. It can also provide information about which webserver and version it is using along with other juicy details that can be used by hackers and pen-testers for information gathering.
+Shodan is mainly used for security research, and that was the original intent of the developer. However, many hackers also use this tool to find information about vulnerable devices on the internet.
+
+The main focus is around the Internet of Things since there are already billions of devices coming online every year.
+Shodan can show researchers and pentesters:
+
+1) Devices which have specific vulnerabilities that
+
+2)Devices which can be identified quickly by their banner information.
+
+3)Devices with default credentials
+
+4)Devices connected to the internet without any security
+How to use shodan?
+
+A simple Tutorial for Basic Users:
+
+Step 1: You start by visiting the official site of Shodan.
+
+Step 2: Now in the search box type: Any of the following popular queries
+
+“Webcam“,” ” vnc“, ” Android debug bride“, ” router“, ” cams” default password“
+
+For this search, I looked for “android debug bridge.“
+shodan finding adb android devices
+
+From the image, you can see all the critical information revealed by Shodan
+
+Step 3: Click on any link, and you will get even more detailed information about ports services manufacturers information, etc.
+
+What if you want to search for any specific information on shodan?
+
+Well, we have shodan filters that can help you simplify the whole deal. There are many more filters that can be used. The detailed list is added below. For now, I will show the most popular ones below:
+
+Shodan Filters
+
+Here are the most popular search filters you can use on shodan:
+
+§ city: find devices connected in a particular city, 
+
+e.g., city:”San Francisco.”
+shodan
+
+§ country: find devices in a particular country, 
+
+e.g., country:”IN”
+shodan
+
+§ geo: you can pass it longitude-latitude coordinates
+
+geo:32.8,-117,50
+how to hack devices with shodan
+
+§ Hostname: find devices with that matching the Hostname
+
+hostname:”google”
+shodan
+
+§ net: search based on an IP address
+
+net:”216.219.143.0/24″
+
+§ os: search based on the operating systems
+
+os:”windows”
+shodan
+
+§ port: find particular ports which are open on specific devices (e.g., 8080, 21, etc.)
+
+port:8080
+
+§ before/after: find results within a specific time frame.
+
+country: CH after: 22/03/2010 before:4/6/2010
+
+You can also use the “Explore” feature on the main website of Shodan to look at popular searches and results. You’ll find exciting things like:
+
+1. Webcams
+
+2. SCADA
+
+3. Traffic lights
+
+4. Routers
+
+5. Default passwords
+
+6. IoT devices
+
+7.and many more
+Advanced Use of shodan
+
+Here are a few other cool features of shodan you need to know about
+
+1. Data Export feature: You can export your shodan search results in various formats by using the top menu
+
+2. Browser Search: You can configure your browser by adding addons for shodan. A chrome and firefox plugin is available with shodan API
+
+3. Shodan is Free: You need to create a free shodan account to access all the information. Compared to before, many of the shodan features have become paid only. However, you can still use the free version as much as you want legally.
+
+4. Premium Accounts: A shodan premium account can be bought with a monthly subscription, as shown below. See the image for more details on shodan premium plans
+shodan
+
+5. Shodan Exploit search feature
+
+6. Shodan Map search
+
+You can find devices by using the map search feature. A great way to find vulnerable devices near you. You can control everything with the mouse making it quite easy to navigate.
+hacking devices with shodan
+
+7. Shodan honeypot checker
+
+Shodan now has a great feature to check for honeypots. By using these feature, we can confirm the IP address we are pining is an actual device or a honeypot.
+
+List of Shodan Filters
+
+General Filters
+
+after	Only show results after the given date (dd/mm/yyyy)	string
+asn	Autonomous system number	string
+before	Only show results before the given date (dd/mm/yyyy)	string
+category	Available categories: ics, malware	string
+city	Name of the city	string
+country	The 2-letter country code	string
+geo	Accepts between 2 and 4 parameters. If 2 parameters: latitude, longitude. If 3 parameters: latitude,longitude,range. If 4 parameters: top left latitude, top left longitude, bottom right latitude, bottom right longitude.	string
+hash	Hash of the data property integer	integer
+has_ipv6	True/ False boolean	boolean
+has_screenshot	True/ False boolean	boolean
+hostname	The full hostname for the device	string
+ip	Alias for net filter	string
+isp	ISP managing the netblock	string
+net	Network range in CIDR notation (ex. 199.4.1.0/24)	string
+org	The organization assigned the netblock	string
+os	Search by Operating system	string
+port	Port number for the service integer	string
+postal	Postal code (US-only) string	string
+product	Name of the software/ product providing the banner string	string
+region	Name of the region/ state string	string
+state	Alias for region string	string
+version	Version for the product string	string
+vuln	CVE ID for a vulnerability string	string
+
+HTTP Filters 
+
+http.component	Name of web technology used on the website	string
+http.component_category	Category of web components used on the website	string
+http.html	HTML of web banners	string
+http.html_hash	Hash of the website HTML	integer
+http.status	Response status code	integer
+http.title	Title for the web banners website	string
+
+NTP Filters
+
+ntp.ip	IP addresses returned by monlist	string
+ntp.ip_count	Number of IPs returned by initial monlist	integer
+ntp.more	True/ False; whether there are more IP addresses to be gathered from monlist	boolean
+ntp.port	Port used by IP addresses in monlist	integer
+
+SSL Filters
+
+has_ssl	True / False	boolean
+ssl	Search all SSL data	string
+ssl.alpn	Application layer protocols such as HTTP/2 (“h2”)	string
+ssl.chain_count	Number of certificates in the chain	integer
+ssl.version	Possible values: SSLv2, SSLv3, TLSv1,TLSv1.1, TLSv1.2	string
+ssl.cert.alg	Certificate algorithm	string
+ssl.cert.expired	True / False	boolean
+ssl.cert.extension	vNames of extensions in the certificate	string
+ssl.cert.serial	Serial number as an integer or hexadecimal string	integer / string
+ssl.cert.pubkey.bits	Number of bits in the public key	integer
+ssl.cert.pubkey.type	Public key type	string
+ssl.cipher.version	SSL version of the preferred cipher	string
+ssl.cipher.bits	Number of bits in the preferred cipher	integer
+ssl.cipher.name	Name of the preferred cipher	string
+
+Telnet Filters
+
+telnet.option	Search all the options available	string
+telnet.do	The server requests the client does support these options	string
+telnet.dont	The server requests the client not to support these options	string
+telnet.will	The server supports these options	string
+telnet.wont	The server doesn’t support these options	string
+
+How to secure your devices on the internet?
+
+    -Make sure you change the default password configuration of devices on the internet
+    -Services that do not require the internet should not be connected to the internet.
+    -Devices should be updated and regularly checked
+    -Use proper firewalls and antivirus for protecting devices
