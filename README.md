@@ -1,3 +1,3 @@
 # wrathofdog
-Guida completa su come essere pienamente operativi su whatsapp.
+Guida sull'osint.
 Benvenuti nel vero Mossad.
